@@ -1,53 +1,26 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
-    
-  
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        <f:view>
-            <h:form>
-                <h1 align="center">Tipo Post</h1>
-                <p:dataTable value="#{tipoPostBean.lista}" var="item">
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="IdTipoPost"/>
-                        </f:facet>
-                        <h:outputText value="#{item.idTipoPost}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Nombre"/>
-                        </f:facet>
-                        <h:outputText value="#{item.nombre}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Activo"/>
-                        </f:facet>
-                        <h:outputText value="#{item.activo}"/>
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">
-                            <h:outputText value="Descripcion"/>
-                        </f:facet>
-                        <h:outputText value="#{item.descripcion}"/>
-                    </p:column>
-                </p:dataTable>
-            </h:form>
-        </f:view>
-        <br/>
-        <h:form>
-            <h:outputLabel><strong>Crear un nuevo registro</strong</h:outputLabel>
-            <h:outputLabel><strong>Id</strong</h:outputLabel><h:inputText id="idtxt"/><br/>
-            <h:outputLabel><strong>Nombre</strong</h:outputLabel>
+       <h:form>
+            idTipoPost: <h:inputText id="idTipoPost" size="40" maxlength="60"
+                                     value="#{tipoPostBean}" /> <br/>
+            nombre: <h:inputText id="nombre" size="40" maxlength="60"
+                                 value="#{tipoPostBean}" /><br/>
+            activo: <h:inputText id="activo" size="40" maxlength="60"
+                                 value="#{tipoPostBean}" /><br/>
+             descripcion:<h:inputText id="descripcion" size="40" maxlength="60"
+                                      value="#{tipoPostBean}" /><br/>
+            The validation code is necesary to validate the user<br/>
+            (El código de validación es necesario para validad el usuario)<br/>
+            <h:commandButton id="submit"
+                             value="SUBMIT"
+                             action="validation" />
         </h:form>
-        
+        <br />
     </h:body>
 </html>
-
